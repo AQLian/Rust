@@ -13,6 +13,8 @@ where
     comparator: fn(&T, &T) -> bool,
 }
 
+// todo :
+// may be a Fn trait comparator is more flexible ?
 impl<T> Heap<T>
 where
     T: Default,
@@ -98,6 +100,9 @@ where
     }
 }
 
+// todo: since this one actually consume the vec
+// this should be a IntoIter impl
+// and also need a immutable iter that not consume items
 impl<T> Iterator for Heap<T>
 where
     T: Default,
